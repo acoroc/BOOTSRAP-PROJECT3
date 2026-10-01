@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eraserheads | OPM Legends Vault</title>
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #0b0c10;
+            --accent-gold: #c5a880;
+            --muted-gray: #171a21;
+        }
+        body {
+            background-color: var(--primary-dark);
+            color: #f8f9fa;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Translucent Glassmorphic Fixed Navigation Bar */
+        .navbar-elegant {
+            background: rgba(11, 12, 16, 0.8) !important;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+            transition: all 0.3s ease;
+        }
+        .nav-link {
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7) !important;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-gold) !important;
+        }
+        
+        /* Dramatic Atmospheric Hero Banner Area */
+        
+        .hero-section { 
+            background: linear-gradient(180deg, rgba(9, 10, 15, 0.4) 0%, rgba(9, 10, 15, 1) 98%), 
+              url('images/bg-eheads.jpg') center / cover no-repeat; 
+              background-attachment: scroll; 
+              height: 75vh; 
+              display: flex; 
+              align-items: center; 
+              position: relative;
+        }
+
+       
+        .text-gold {
+            color: var(--accent-gold);
+        }
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            font-weight: 600;
+            border: 1px solid var(--accent-gold);
+            padding: 0.7rem 2.2rem;
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            background-color: transparent;
+            color: var(--accent-gold);
+        }
+        .btn-outline-gold {
+            border: 1px solid rgba(197, 168, 128, 0.4);
+            color: #ffffff;
+            padding: 0.7rem 2.2rem;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-gold:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            background-color: rgba(197, 168, 128, 0.05);
+        }
+        /* Artist Side Profiling Dashboard */
+        .profile-card {
+            background-color: var(--muted-gray);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+        .artist-bio-img {
+            border-radius: 12px;
+            object-fit: cover;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            filter: grayscale(30%);
+        }
+        /* Photo Grid Visual Containers */
+        .gallery-frame {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .gallery-frame img {
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .gallery-frame:hover img {
+            transform: scale(1.08);
+        }
+        .transition-link {
+            transition: color 0.2s ease;
+        }
+        .transition-link:hover {
+            color: var(--accent-gold) !important;
+        }
+        
+        .backend-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.backend-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5) !important;
+}
+
+.member-zoom {
+  transition: transform 0.5s ease;
+}
+
+.backend-card:hover .member-zoom {
+  transform: scale(1.05);
+}
+    </style>
+</head>
+<body>
+
+    <!-- Upper Navbar Component -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-elegant sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold tracking-wider fs-4 text-white" href="#">
+                ERASER<span class="text-gold">HEADS</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#singerNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="singerNavbar">
+                <ul class="navbar-nav ms-auto gap-lg-3">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#biography">Biography</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#lineup">Line Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Hero Branding Panel Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 text-start">
+                    <span class="text-uppercase text-gold tracking-widest fw-semibold small mb-2 d-inline-block">The Beatles of the Philippines</span>
+                    <h1 class="display-1 fw-bold text-white mb-3">The Soundtrack of Pinoy Culture</h1>
+                    <p class="lead text-white-50 mb-4 fs-5" style="max-width: 650px;">From college campus garage jams to historic record-breaking stadium tours, exploring the counter-culture legacy that defined Original Pilipino Music.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#biography" class="btn btn-gold rounded-pill shadow-sm">Read Biography</a>
+                        <a href="#gallery" class="btn btn-outline-gold rounded-pill"><i class="bi bi-collection-play me-2"></i>View History</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Group History & Bio Data Grid Block -->
+    <section id="biography" class="py-5 my-2">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+                
+                <!-- Narrative Column (Left) -->
+                <div class="col-lg-7">
+                    <h2 class="display-5 fw-bold text-white mb-4">The Mythos of <span class="text-gold">The E-Heads</span></h2>
+                    
+                    <p class="text-white-50 lh-lg mb-4">
+                        Formed in 1989 at the University of the Philippines Diliman, the **Eraserheads** fundamentally reshaped the landscape of Philippine alternative rock. Blending raw garage-band energy, melodic structures reminiscent of classic pop, and clever, hyper-local storytelling, they gave a distinctive voice to the everyday experiences of Filipino youth throughout the 1990s.
+                    </p>
+                    
+                    <p class="text-white-50 lh-lg mb-4">
+                        The group—comprising **Ely Buendia**, **Buddy Zabala**, **Marcus Adoro**, and **Raimund Marasigan**—broke into the mainstream with their multi-platinum debut album *Ultraelectromagneticpop!*. Their masterful songwriting sparked an underground band explosion, pulling acoustic lyricism out of quiet venues and placing alternative sounds directly into mainstream radio stations across the archipelago.
+                    </p>
+                    
+                    <div
+                        class="p-4 border-start border-3 border-warning my-4 rounded-end shadow-sm"
+                        style="background-color: rgba(255, 193, 7, 0.04); border-color: #ffc107 !important">
+                        <p class="fst-italic mb-0 fs-5 lh-base" style="color: #e2e8f0">
+                            <i class="bi bi-quote text-warning fs-3 d-block mb-1"></i>
+                            "Their songs act like sonic checkpoints in modern Pinoy history. To hear 'Ang Huling El
+                            Bimbo' is to remember the exact texture of an entire generation's youth."
+                        </p>
+                    </div>
+
+                    <p class="text-white-50 lh-lg">
+                        Beyond the chart success of timeless records like *Cutterpillow* and *Sticker Happy*, the Eraserheads earned prestigious international nods, including the iconic Billboard Asia Viewer's Choice Award at the 1997 MTV Video Music Awards. Decades after their initial separation, their catalog continues to influence contemporary music production, reinforcing their status as a cornerstone of modern Philippine art.
+                    </p>
+                </div>
+
+                 <!--Strategic Summary Profile Information Deck Card (Right)-->
+                <div class="col-lg-5">
+                    <div class="profile-card p-4 shadow-sm position-sticky" style="top: 100px;">
+                        <!-- Main Themed Profile Image Node Wrapper -->
+                        <img src="https://unsplash.com" 
+                             alt="Eraserheads Vintage Artistic Representation" 
+                             class="img-fluid w-100 artist-bio-img mb-4 shadow">
+                        
+                        <h3 class="h4 text-white fw-bold mb-3 border-bottom border-secondary border-opacity-25 pb-2">Band Profile</h3>
+                        
+                        <!-- Quick Stats Layout rows -->
+                        <div class="row g-3 small">
+                            <div class="col-4 text-gold fw-semibold">Band Name:</div>
+                            <div class="col-8 text-white-50">Eraserheads (E-Heads)</div>
+
+                            <div class="col-4 text-gold fw-semibold">Active Years:</div>
+                            <div class="col-8 text-white-50">1989–2002 (Reunions: 2008–Present)</div>
+
+                            <div class="col-4 text-gold fw-semibold">Genres:</div>
+                            <div class="col-8 text-white-50">Alternative Rock, Pop Rock, Indie Rock</div>
+
+                            <div class="col-4 text-gold fw-semibold">Members:</div>
+                            <div class="col-8 text-white-50">Ely Buendia, Buddy Zabala, Marcus Adoro, Raimund Marasigan</div>
+
+                            <div class="col-4 text-gold fw-semibold">Labels:</div>
+                            <div class="col-8 text-white-50">BMG Records Pilipinas / Sony Music</div>
+                        </div>
+
+                        <!-- Social Streaming Links Panel -->
+                        <div class="d-flex gap-3 justify-content-center mt-4 border-top border-secondary border-opacity-25 pt-3">
+                            <a href="https://spotify.com" target="_blank" class="text-white-50 fs-5 hover-gold transition-link"><i class="bi bi-spotify"></i></a>
+                            <a href="https://youtube.com" target="_blank" class="text-white-50 fs-5 hover-gold transition-link"><i class="bi bi-youtube"></i></a>
+                            <a href="#" class="text-white-50 fs-5 hover-gold transition-link"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="text-white-50 fs-5 hover-gold transition-link"><i class="bi bi-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <!--THE LINE UP-->
+<section id ="lineup" class="py-5" style="background-color: #090a0f;">
+  <div class="container py-4">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <h2 class="text-uppercase fw-bold text-white tracking-wider mb-2" style="letter-spacing: 2px;">The Lineup</h2>
+      <p class="text-muted mx-auto" style="max-width: 600px;">
+        Often dubbed "The Beatles of the Philippines," meet the foundational architects of 90s OPM alternative rock.
+      </p>
+    </div>
+
+    <!-- Members Grid Container -->
+    <div class="row g-4">
+      
+      <!-- Member 1: Ely Buendia -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm text-white backend-card" style="background-color: #12141c;">
+          <div class="position-relative overflow-hidden" style="height: 300px;">
+            <img src="images/ely.jpg" class="card-img-top w-100 h-100 object-fit-cover member-zoom" alt="Ely Buendia">
+          </div>
+          <div class="card-body p-4">
+            <h3 class="h5 card-title fw-bold mb-1">Ely Buendia</h3>
+            <p class="text-danger small fw-bold text-uppercase mb-3" style="letter-spacing: 1px;">Lead Vocals / Rhythm Guitar</p>
+            <p class="card-text text-light-50 small lh-base fw-normal">
+              The primary songwriter and iconic voice of the band. Meeting the group at UP Diliman, Ely's catchy melodies and witty, caustic storytelling fueled their multi-platinum breakthrough albums like Ultraelectromagneticpop! and Cutterpillow.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 2: Buddy Zabala -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm text-white backend-card" style="background-color: #12141c;">
+          <div class="position-relative overflow-hidden" style="height: 300px;">
+            <img src="images/buddy.jpeg" class="card-img-top w-100 h-100 object-fit-cover member-zoom" alt="Buddy Zabala">
+          </div>
+          <div class="card-body p-4">
+            <h3 class="h5 card-title fw-bold mb-1">Buddy Zabala</h3>
+            <p class="text-danger small fw-bold text-uppercase mb-3" style="letter-spacing: 1px;">Bass Guitar / Backing Vocals</p>
+            <p class="card-text text-light-50 small lh-base fw-normal">
+              The anchor of the band's rhythm section. Buddy's dynamic, driving basslines provided the tight musical backbone that defined the band's unique genre-spanning sound, blending elements of pop hooks, alternative rock, and punk.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 3: Marcus Adoro -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm text-white backend-card" style="background-color: #12141c;">
+          <div class="position-relative overflow-hidden" style="height: 300px;">
+            <img src="images/marcus.jpg" class="card-img-top w-100 h-100 object-fit-cover member-zoom" alt="Marcus Adoro">
+          </div>
+          <div class="card-body p-4">
+            <h3 class="h5 card-title fw-bold mb-1">Marcus Adoro</h3>
+            <p class="text-danger small fw-bold text-uppercase mb-3" style="letter-spacing: 1px;">Lead Guitar / Backing Vocals</p>
+            <p class="card-text text-light-50 small lh-base fw-normal">
+              Known for his surf-rock inflections and distinct, raw tone. Marcus's iconic guitar riffs gave life to unmatched timeless anthems like "Ang Huling El Bimbo" and "Alapaap," securing his footprint in Pinoy rock history.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 4: Raimund Marasigan -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm text-white backend-card" style="background-color: #12141c;">
+          <div class="position-relative overflow-hidden" style="height: 300px;">
+            <img src="images/raimund1.jpg" class="card-img-top w-100 h-100 object-fit-cover member-zoom" alt="Raimund Marasigan">
+          </div>
+          <div class="card-body p-4">
+            <h3 class="h5 card-title fw-bold mb-1">Raimund Marasigan</h3>
+            <p class="text-danger small fw-bold text-uppercase mb-3" style="letter-spacing: 1px;">Drums / Keyboards / Backing</p>
+            <p class="card-text text-light-50 small lh-base fw-normal">
+              The experimental engine of the group. Raimund brought unparalleled energy from behind the drum kit while steering their later non-linear studio projects, pushing the band to integrate electronica and art-rock styles.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    
+    <!-- Featured Music Video Spotlight Section -->
+    <section id="featured-video" class="py-5 border-top border-secondary border-opacity-10">
+        <div class="container py-3">
+            <div class="text-center mb-5">
+                <span class="text-uppercase text-gold tracking-widest fw-semibold small mb-2 d-inline-block">Masterpiece Spotlight</span>
+                <h2 class="display-6 fw-bold text-white mb-2">Ang Huling El Bimbo</h2>
+                <div class="mx-auto bg-warning mb-3" style="width: 50px; height: 2px;"></div>
+                <p class="text-white-50 small mb-0">Experience the timeless official music video and sonic history</p>
+            </div>
+
+            <div class="row g-4 align-items-center">
+                <!-- Left Side: Responsive YouTube IFrame Video Embed -->
+                <div class="col-lg-7">
+                    <!-- Bootstrap 16:9 Aspect Ratio Helper Container -->
+                    <div class="ratio ratio-16x9 bg-black rounded-4 shadow overflow-hidden border border-secondary border-opacity-25">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/lajnSJZpI34?si=yWV-4H9elS4PHerp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Right Side: Song Credits & Artistic Context -->
+                <div class="col-lg-5">
+                    <div class="p-4 rounded-4 h-100" style="background-color: var(--muted-gray); border: 1px solid rgba(255, 255, 255, 0.05);">
+                        <h3 class="h4 text-white fw-bold mb-3 d-flex align-items-center">
+                            <i class="bi bi-disc-fill text-warning me-2 fs-5"></i> Track Heritage
+                        </h3>
+                        
+                        <p class="text-white-50 small lh-lg mb-4">
+                            Released in 1995 as part of the legendary <strong class="text-white">Cutterpillow</strong> album, this iconic track won the coveted <em>International Viewer's Choice Award</em> at the MTV Video Music Awards. Written by Ely Buendia, its symphonic production and nostalgic narrative made it an immediate cultural anchor.
+                        </p>
+
+                        <!-- Stylized Minimal Metadata Rows -->
+                        <div class="row g-2 small border-top border-secondary border-opacity-25 pt-3 mb-0">
+                            <div class="col-4 text-gold fw-semibold">Album:</div>
+                            <div class="col-8 text-white-50">Cutterpillow (1995)</div>
+
+                            <div class="col-4 text-gold fw-semibold">Songwriter:</div>
+                            <div class="col-8 text-white-50">Ely Buendia</div>
+
+                            <div class="col-4 text-gold fw-semibold">Arrangement:</div>
+                            <div class="col-8 text-white-50">Eraserheads & Robin Rivera</div>
+
+                            <div class="col-4 text-gold fw-semibold">Accolade:</div>
+                            <div class="col-8 text-white-50"><i class="bi bi-trophy-fill text-warning me-1"></i> MTV VMA Winner (1997)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+        <!-- Visual Captured Moments Carousel Section -->
+    <section id="gallery" class="py-5 bg-black bg-opacity-40 border-top border-secondary border-opacity-10">
+        <div class="container py-3">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold text-white mb-2">The Legacy Live</h2>
+                <div class="mx-auto bg-warning mb-3" style="width: 50px; height: 2px;"></div>
+                <p class="text-gold tracking-widest text-uppercase small mb-0">Historic Stadium Tours & Reunion Shows</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Bootstrap 5 Carousel with Crossfade Effect -->
+                    <div id="eraserheadsCarousel" class="carousel slide carousel-fade shadow rounded-4 overflow-hidden border border-secondary border-opacity-25" data-bs-ride="carousel">
+                        
+                        <!-- Carousel Indicators (Bottom Dots) -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#eraserheadsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#eraserheadsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#eraserheadsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        
+                        <!-- Carousel Inner Content Items -->
+                        <div class="carousel-inner">
+                            <!-- Slide 1 -->
+                            <div class="carousel-item active" data-bs-interval="4000">
+                                <div class="ratio ratio-21x9 bg-dark">
+                                    <img src="images/eh-car1.jpg" class="d-block w-100 object-fit-cover style-img" alt="Eraserheads Massive Reunion Concert Arena Crowd">
+                                </div>
+                                <div class="carousel-caption d-none d-md-block p-4 rounded-3" style="background: rgba(11, 12, 16, 0.75); backdrop-filter: blur(5px);">
+                                    <h5 class="text-gold fw-bold mb-1">Ang Huling El Bimbo Tour</h5>
+                                    <p class="small text-white-50 mb-0">Performing live in front of historic stadium crowds during their grand reunion shows.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 2 -->
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <div class="ratio ratio-21x9 bg-dark">
+                                    <img src="images/eh-car2.jpg" class="d-block w-100 object-fit-cover style-img" alt="Vintage Rock Studio Recording Session Setup">
+                                </div>
+                                <div class="carousel-caption d-none d-md-block p-4 rounded-3" style="background: rgba(11, 12, 16, 0.75); backdrop-filter: blur(5px);">
+                                    <h5 class="text-gold fw-bold mb-1">Studio Sessions</h5>
+                                    <p class="small text-white-50 mb-0">Behind-the-scenes glimpses into the analog production era where musical magic happened.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 3 -->
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <div class="ratio ratio-21x9 bg-dark">
+                                    <img src="images/eh-car3.jpg" class="d-block w-100 object-fit-cover style-img" alt="Guitars and Garage Rock Gear Showcase">
+                                </div>
+                                <div class="carousel-caption d-none d-md-block p-4 rounded-3" style="background: rgba(11, 12, 16, 0.75); backdrop-filter: blur(5px);">
+                                    <h5 class="text-gold fw-bold mb-1">The Legendary Gear</h5>
+                                    <p class="small text-white-50 mb-0">The timeless rock setup, guitars, and equipment configurations that forged the sound of 90s OPM.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Arrows (Left/Right) -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#eraserheadsCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#eraserheadsCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+   
+    
+    <!-- Contact & Fan Engagement Section -->
+    <section id="contact" class="py-5 border-top border-secondary border-opacity-10">
+        <div class="container py-3">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold text-white mb-2">Connect With Us</h2>
+                <div class="mx-auto bg-warning mb-3" style="width: 50px; height: 2px;"></div>
+                <p class="text-gold tracking-widest text-uppercase small mb-0">Inquiries, Fan Mail, or Community Submissions</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="profile-card p-4 p-md-5 shadow-sm">
+                        <form id="fanContactForm" action="#" method="POST">
+                            <div class="row g-3">
+                                <!-- Name Input -->
+                                <div class="col-md-6">
+                                    <label for="fanName" class="form-label text-gold small fw-semibold text-uppercase tracking-wider">Your Name</label>
+                                    <input type="text" class="form-control bg-black border-secondary border-opacity-50 text-white rounded-3 py-2.5 shadow-none" id="fanName" placeholder="Juan dela Cruz" required style="border-color: rgba(255,255,255,0.15) !important;">
+                                </div>
+                                <!-- Email Input -->
+                                <div class="col-md-6">
+                                    <label for="fanEmail" class="form-label text-gold small fw-semibold text-uppercase tracking-wider">Email Address</label>
+                                    <input type="email" class="form-control bg-black border-secondary border-opacity-50 text-white rounded-3 py-2.5 shadow-none" id="fanEmail" placeholder="juan@example.com" required style="border-color: rgba(255,255,255,0.15) !important;">
+                                </div>
+                                <!-- Subject Input -->
+                                <div class="col-md-12">
+                                    <label for="formSubject" class="form-label text-gold small fw-semibold text-uppercase tracking-wider">Subject</label>
+                                    <select class="form-select bg-black border-secondary border-opacity-50 text-white rounded-3 py-2.5 shadow-none" id="formSubject" required style="border-color: rgba(255,255,255,0.15) !important;">
+                                        <option value="" disabled selected class="text-muted">Select an option...</option>
+                                        <option value="fan-mail">Fan Mail & Stories</option>
+                                        <option value="submission">Archival Photo/Story Submission</option>
+                                        <option value="business">Media & Business Inquiries</option>
+                                        <option value="other">Other / Website Feedback</option>
+                                    </select>
+                                </div>
+                                <!-- Message Input -->
+                                <div class="col-md-12">
+                                    <label for="fanMessage" class="form-label text-gold small fw-semibold text-uppercase tracking-wider">Your Message</label>
+                                    <textarea class="form-control bg-black border-secondary border-opacity-50 text-white rounded-3 shadow-none" id="fanMessage" rows="5" placeholder="Share your favorite E-Heads memory or drop us a message..." required style="border-color: rgba(255,255,255,0.15) !important; resize: none;"></textarea>
+                                </div>
+                                <!-- Submit Button -->
+                                <div class="col-md-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-gold rounded-pill px-5 py-2.5 text-uppercase tracking-wider fw-bold small">
+                                        Send Message <i class="bi bi-send-fill ms-2 small"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Footer Component -->
+    <footer class="text-center py-4 border-top border-secondary border-opacity-25 mt-5 bg-black bg-opacity-20 text-white-50 small">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Alex Corocoto. All rights reserved.
+</p>
+            <p class="mb-0">Fan concept tribute page for the Eraserheads.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3.3  -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
